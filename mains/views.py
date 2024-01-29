@@ -5,10 +5,10 @@ from .models import *
 
 
 def index(request):
-    profiles=Profile.objects.all()
+    profiles=Profile.objects.order_by('pk')
     context={
         'title':'text',
-        profiles:'profiles'
+        'profiles':profiles
     }
     return render(request,'mains/index.html',context=context)
 
