@@ -10,5 +10,9 @@
 <body>
     <h1>{{title}}</h1>
     {{profiles}}
+    {%for ice in icecream%}
+    
+    <a href="{{ice.get_absolute_url}}">{{ice.name}}</a>
+    {%endfor%}
 </body>
 </html>

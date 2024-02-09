@@ -25,5 +25,10 @@ class ProductAdmin(admin.ModelAdmin):
     
 @admin.register(Icecream)
 class IcecreamAdmin(admin.ModelAdmin):
-    pass
+    list_display=('id','name','price')
+    list_filter = ['name']
+    search_fields = ['name']
+    prepopulated_fields = {'slug': ('name',)}
+    # raw_id_fields = ['name']
+    # date_hierarchy = 'publish'
 
